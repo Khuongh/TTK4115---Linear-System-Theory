@@ -124,7 +124,7 @@ ylabel('Value')
 title('Case 1.3.2: \lambda_1 = j5 , \lambda_2 = -j5')
 
 figure(4)
-subplot(3,1,1)
+subplot(2,1,1)
 plot(data10(1,:),data10(4,:), data10(1,:),data10(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response');
@@ -132,24 +132,25 @@ xlabel('Time [s]');
 ylabel('Value');
 title('Case 1.4.1: \lambda_1 = -3+j3 , \lambda_2 = -3-j3');
 
-subplot(3,1,2)
+subplot(2,1,2)
 plot(data11(1,:),data11(4,:), data11(1,:),data11(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response')
+xlim([0 50])
 xlabel('Time [s]')
 ylabel('Value')
 title('Case 1.4.2: \lambda_1 = -3+j4 , \lambda_2 = -3-j4')
 
-subplot(3,1,3)
-plot(data12(1,:),data12(4,:), data12(1,:),data12(8,:))
-grid on;
-legend('Pitch [rad]', 'Step response');
-xlabel('Time [s]');
-ylabel('Value');
-title('Case 1.4.3: \lambda_1 = -1+j4 , \lambda_2 = -1-j4');
+% subplot(3,1,3)
+% plot(data12(1,:),data12(4,:), data12(1,:),data12(8,:))
+% grid on;
+% legend('Pitch [rad]', 'Step response');
+% xlabel('Time [s]');
+% ylabel('Value');
+% title('Case 1.4.3: \lambda_1 = -1+j4 , \lambda_2 = -1-j4');
 
 figure(5)
-subplot(2,1,1)
+subplot(2,2,1)
 plot(data13(1,:),data13(4,:), data13(1,:),data13(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response');
@@ -157,15 +158,15 @@ xlabel('Time [s]');
 ylabel('Value');
 title('Case 1.5.1: \lambda_1 = 0.1+j0.1 , \lambda_2 = 0.1-j0.1');
 
-subplot(2,1,2)
-plot(data14(1,:),data14(4,:), data14(1,:),data14(8,:))
-grid on;
-legend('Pitch [rad]', 'Step response');
-xlabel('Time [s]');
-ylabel('Value');
-title('Case 1.5.2: \lambda_1 = ??? , \lambda_2 = ???');
+%subplot(2,1,2)
+%plot(data14(1,:),data14(4,:), data14(1,:),data14(8,:))
+%grid   on;
+%legend('Pitch [rad]', 'Step response');
+%xlabel('Time [s]');
+%ylabel('Value');
+%title('Case 1.5.2: \lambda_1 = ??? , \lambda_2 = ???');
 
-figure(6)
+subplot(2,2,2)
 plot(data15(1,:),data15(4,:), data15(1,:),data15(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response');
@@ -173,8 +174,7 @@ xlabel('Time [s]');
 ylabel('Value');
 title('Case 1.6.1: \lambda_1 = 0.01 , \lambda_2 = 0.03');
 
-figure(7)
-subplot(2,1,1)
+subplot(2,2,3)
 plot(data16(1,:),data16(4,:), data16(1,:),data16(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response');
@@ -182,7 +182,7 @@ xlabel('Time [s]');
 ylabel('Value');
 title('Case 1.7.1: \lambda_1 = -3 , \lambda_2 = 0.05');
 
-subplot(2,1,2)
+subplot(2,2,4)
 plot(data17(1,:),data17(4,:), data17(1,:),data17(8,:))
 grid on;
 legend('Pitch [rad]', 'Step response');
