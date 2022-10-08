@@ -1,15 +1,76 @@
+%% 
+%Loading data
+load('Lab_2_case_files\Lab2_case_1.1.1.mat')
+data1 = data;
+load('Lab_2_case_files\Lab2_case_1.2.1.mat')
+data2 = data;
+load('Lab_2_case_files\Lab2_case_1.2.2.mat')
+data3 = data;
+load('Lab_2_case_files\Lab2_case_1.2.3.mat')
+data4 = data;
+load('Lab_2_case_files\Lab2_case_1.2.4.mat')
+data5 = data;
 load('Lab_2_case_files\Lab2_case_1.3.1.mat')
+data6 = data;
+load('Lab_2_case_files\Lab2_case_1.3.2.mat')
+data7 = data;
+load('Lab_2_case_files\Lab2_case_1.3.3.mat')
+data8 = data;
+load('Lab_2_case_files\Lab2_case_1.3.4.mat')
+data9 = data;
+load('Lab_2_case_files\Lab2_case_1.4.1.mat')
+data10 = data;
+load('Lab_2_case_files\Lab2_case_1.4.2.mat')
+data11 = data;
+load('Lab_2_case_files\Lab2_case_1.4.3.mat')
+data12 = data;
+load('Lab_2_case_files\Lab2_case_1.4.3.2.mat')
+data13 = data;
+load('Lab_2_case_files\Lab2_case_1.4.4.mat')
+data14 = data;
+load('Lab_2_case_files\Lab2_case_1.5.1.mat')
+data15 = data;
+load('Lab_2_case_files\Lab2_case_1.5.2.mat')
+data16 = data;
+load('Lab_2_case_files\Lab2_case_1.5.3.mat')
+data17 = data;
+load('Lab_2_case_files\Lab2_case_2.1.1.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.1.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.2.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.3.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.4.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.5.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.6.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.7.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.8.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.9.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.10.mat')
+data18 = data;
+load('Lab_2_case_files\Lab2_case_2.2.11.mat')
+data18 = data;
+
+%% 
 
 figure(1)
 
 subplot(2,1,1)
-plot(data(1,:), data(4,:), data(1,:), data(5,:), data(1,:), data(8,:))
+plot(data1(1,:), data1(4,:), data1(1,:), data1(5,:), data1(1,:), data1(8,:))
 grid on;
 legend('Pitch [rad]', 'Pitch rate [rad/s]', 'Ref. pitch [rad]')
 xlabel('Time [s]')
 ylabel('Value')
 xlim([0 70])
-title('PITCH')
+title('Case 1.1.1, PITCH')
 
 subplot(2,1,2)
 plot(data(1,:), data(6,:), data(1,:), data(7,:), data(1,:), data(9,:))
@@ -18,9 +79,8 @@ legend('Elevation [rad]', 'Elevation rate [rad/s]', 'Ref. elev. rate [rad/s]')
 xlabel('Time [s]')
 ylabel('Value')
 xlim([0 70])
-title('ELEVATION')
+title('Case 1.1.1, ELEVATION')
 
-load('Lab_2_case_files\Lab2_case_1.3.4.mat')
 
 figure(2)
 
