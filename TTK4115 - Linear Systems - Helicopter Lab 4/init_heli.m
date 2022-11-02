@@ -121,7 +121,7 @@ L = place(A_L', C_L', p)'
 dev_states_IMU = [0.02 -0.039];
 dev_rates_IMU = [0; 0.044; 0.043];
 
-%Setting Timestamp to 2ms
+%Timestep = 2ms
 Ts = 0.002;
 
 A_c = [0 1 0 0 0 0;
@@ -137,22 +137,16 @@ B_c = [0 0;
        (l_h*K_f)/J_e 0;
        0 0;
        0 0;];
-%Change observability matrix from lambda_dot to lambda
+   
 C_c = [0 0 1 0 0 0;
        0 0 0 0 1 0;];
+   
 D_c = 0;
 
-Ob = [C_c;
-      C_c*A_c;
-      C_c*A_c^2;
-      C_c*A_c^3;
-      C_c*A_c^4;
-      C_c*A_c^5;];
-  
+% Continuous state space system
 SYSC = ss(A_c,B_c,C_c,D_c);
 
-% Continious to Discrete
-
+% Discrete state space system
 [SYSD, G] = c2d(SYSC, Ts, 'tustin');
 
 
