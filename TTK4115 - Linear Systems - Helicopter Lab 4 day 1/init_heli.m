@@ -29,6 +29,20 @@ m_p = 0.72; % Motor mass [kg]
 V_s0 = 7; % Found by testing
 K_f = (2*l_h*m_p*g - m_c*g*l_c)/(l_h*V_s0);
 
+%%%%%%%%%%% Parameters found under preparatory lab work (lab 1)
+L1 = l_p*K_f;
+L2 = m_c*g*l_c - 2*m_p*g*l_h;
+L3 = l_h*K_f;
+L4 = L3;
+
+J_p = 2*m_p*l_p^2;
+J_e = m_c*l_c^2 + 2*m_p*l_h^2;
+J_lambda = m_c*l_c^2 + 2*m_p*(l_h^2 + l_p^2);
+
+K1 = L1/J_p;
+K2 = L3/J_e;
+K3 = -L2*L4/(L3*J_lambda);
+
 %% LAB 1
 %%%%%%%%%%% Poles
 lambda_1 = -3;
@@ -138,8 +152,7 @@ B_c = [0 0;
        0 0;
        0 0;];
    
-C_c = [0 0 1 0 0 0;
-       0 0 0 0 1 0;];
+C_c = eye(6);
    
 D_c = 0;
 
@@ -149,9 +162,18 @@ SYSC = ss(A_c,B_c,C_c,D_c);
 % Discrete state space system
 [SYSD, G] = c2d(SYSC, Ts, 'tustin');
 
+SYSD_A = SYSD.A;
+SYSD_B = SYSD.B;
+SYSD_C = SYSD.C
+SYSD_D = SYSD.D;
 
 % Kalman
-
 x0 = [0; 0; -pi/6; 0; 0; 0;];
-R_d = 0;
-Q_d = eye(6);
+
+load('Lab_4_case_files\Lab_4_noise_flying.mat');
+data_new = data';
+data_new(:,1) = [];
+R_d = cov(data_new);
+
+Q_d = 1*eye(6)
+P0 = 0.1*eye(6);
