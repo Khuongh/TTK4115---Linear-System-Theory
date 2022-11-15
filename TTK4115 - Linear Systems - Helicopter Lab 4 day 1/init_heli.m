@@ -170,10 +170,13 @@ SYSD_D = SYSD.D;
 % Kalman
 x0 = [0; 0; -pi/6; 0; 0; 0;];
 
-load('Lab_4_case_files\Lab_4_noise_flying.mat');
+load('Lab_4_case_files\Lab_4_noise_still.mat');
 data_new = data';
 data_new(:,1) = [];
-R_d = cov(data_new);
+R_d = cov(data_new)
 
-Q_d = 1*eye(6)
+matrix2latex(R_d, "out.tex")
+Q_d = 1*eye(6);
+
+Q_d_R_d = diag(diag(R_d)) % Only diagonal values of R_d
 P0 = 0.1*eye(6);
